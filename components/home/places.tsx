@@ -21,6 +21,9 @@ export const Places = () => {
   const hasDragged = useRef(false);
   const isHorizontalDrag = useRef(false);
 
+  const isScrolling = useRef(false);
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+
   const duplicatedPlaces = [...places, ...places, ...places];
 
   useEffect(() => {
@@ -40,6 +43,12 @@ export const Places = () => {
   }, []);
 
   const handleScroll = () => {
+    isScrolling.current = true;
+    if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+    scrollTimeout.current = setTimeout(() => {
+      isScrolling.current = false;
+    }, 150);
+
     const el = scrollContainerRef.current;
     if (!el) return;
 
@@ -54,6 +63,7 @@ export const Places = () => {
   };
 
   const handlePointerDown = (e: React.PointerEvent) => {
+    if (e.pointerType === "touch") return;
     if (e.button !== 0) return;
     const el = scrollContainerRef.current;
     if (!el) return;
@@ -107,7 +117,8 @@ export const Places = () => {
         steps = deltaX < 0 ? numCards : -numCards;
       }
 
-      let targetScroll = startScrollLeft.current + steps * cardWidth;
+      const rawTarget = startScrollLeft.current + steps * cardWidth;
+      let targetScroll = Math.round(rawTarget / cardWidth) * cardWidth;
 
       if (singleSetWidth > 0) {
         if (targetScroll >= 2 * singleSetWidth) {
@@ -127,7 +138,7 @@ export const Places = () => {
   };
 
   const togglePlace = (key: string) => {
-    if (hasDragged.current) return;
+    if (hasDragged.current || isScrolling.current) return;
     setActiveKey((prev) => (prev === key ? null : key));
   };
 
@@ -168,7 +179,7 @@ export const Places = () => {
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerUp}
-          className="flex cursor-grab touch-pan-y [scrollbar-width:none] gap-1 overflow-x-auto select-none active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
+          className="flex cursor-grab touch-pan-y [scrollbar-width:none] gap-1 overflow-x-auto select-none active:cursor-grabbing [&::-webkit-scrollbar]:hidden snap-x snap-mandatory md:snap-none"
         >
           {duplicatedPlaces.map((place, index) => {
             const uniqueKey = `${place.id}-${index}`;
@@ -178,7 +189,7 @@ export const Places = () => {
               <div
                 key={uniqueKey}
                 onClick={() => togglePlace(uniqueKey)}
-                className="group relative flex aspect-[2/3] h-[70dvh] shrink-0 cursor-pointer flex-col justify-end overflow-hidden p-6 sm:h-[75dvh] md:h-[80dvh]"
+                className="group relative flex w-[85vw] h-[70dvh] shrink-0 cursor-pointer snap-start snap-always flex-col justify-end overflow-hidden p-6 sm:h-[75dvh] md:w-auto md:aspect-[2/3] md:h-[80dvh] md:snap-align-none"
               >
                 <Image
                   src={place.image_url}
@@ -186,7 +197,7 @@ export const Places = () => {
                   alt={place.name}
                   draggable={false}
                   className="pointer-events-none object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  sizes="(max-width: 768px) 80vw, 500px"
+                  sizes="(max-width: 768px) 85vw, 500px"
                 />
 
                 <div className="bg-foreground/25 absolute inset-0" />
