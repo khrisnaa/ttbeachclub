@@ -2,12 +2,11 @@
 
 import { motion } from "framer-motion";
 import { translateVariants } from "./anim";
-import SquareLink from "../ui/square-link";
-import UnderlineLink from "../ui/underline-link";
+import { UnderlineLink } from "../ui/underline-link";
 
 export const MenuFooter = () => {
   return (
-    <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-3 text-xs uppercase sm:gap-4 sm:text-sm md:gap-8 lg:gap-16">
+    <div className="flex flex-col items-start gap-2.5 pt-3 text-xs uppercase sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 sm:text-sm md:gap-8 lg:gap-16">
       <div>
         <UnderlineLink href="#">Get Voucher</UnderlineLink>
       </div>

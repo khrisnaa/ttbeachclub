@@ -19,17 +19,19 @@ export const Menu = ({ links, onClose }: MenuProps) => {
     index: 0,
   });
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   const activeItem = selectedLink.isActive ? links[selectedLink.index] : null;
 
   return (
     <motion.div
+      custom={isMobile ? "calc(100dvh - 6.25rem)" : "60vh"}
       variants={heightVariants}
       initial="initial"
       animate="enter"
       exit="exit"
       className="bg-background relative overflow-hidden"
     >
-      <div className="flex h-full flex-col justify-between px-4 pt-4 pb-6 md:px-16 md:pt-6 md:pb-8">
+      <div className="flex h-full flex-col justify-between overflow-y-auto px-4 pt-4 pb-6 md:overflow-visible md:px-16 md:pt-6 md:pb-8">
         <div className="flex min-h-0 flex-1 flex-col-reverse justify-between gap-6 lg:flex-row lg:items-stretch lg:gap-10">
           <div className="flex flex-1 items-center">
             <MenuBody
@@ -61,5 +63,3 @@ export const Menu = ({ links, onClose }: MenuProps) => {
     </motion.div>
   );
 };
-
-export default Menu;

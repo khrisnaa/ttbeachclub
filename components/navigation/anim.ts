@@ -35,7 +35,6 @@ export const opacityVariants: Variants = {
     transition: { duration: 0.35 },
   },
 };
-export const opacity = opacityVariants;
 
 export const blurVariants: Variants = {
   initial: {
@@ -53,7 +52,6 @@ export const blurVariants: Variants = {
     transition: { duration: 0.3 },
   },
 };
-export const blur = blurVariants;
 
 export const translateVariants: Variants = {
   initial: {
@@ -71,22 +69,20 @@ export const translateVariants: Variants = {
     transition: { duration: 0.7, ease: easeCurve, delay: i[1] },
   }),
 };
-export const translate = translateVariants;
 
 export const heightVariants: Variants = {
   initial: {
     height: 0,
   },
-  enter: {
-    height: "60vh",
+  enter: (custom: string = "60vh") => ({
+    height: typeof custom === "string" ? custom : "60vh",
     transition,
-  },
+  }),
   exit: {
     height: 0,
     transition,
   },
 };
-export const height = heightVariants;
 
 export const backgroundVariants: Variants = {
   initial: {
@@ -101,4 +97,3 @@ export const backgroundVariants: Variants = {
     transition,
   },
 };
-export const background = backgroundVariants;
