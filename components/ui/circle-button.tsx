@@ -13,7 +13,7 @@ export const CircleButton = ({
     <button
       type={type}
       className={cn(
-        "bg-background border-foreground text-foreground hover:bg-foreground hover:text-background flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border transition-all duration-300 hover:scale-105 active:scale-95 disabled:pointer-events-none disabled:opacity-50",
+        "bg-background border-foreground text-primary hover:bg-foreground hover:text-secondary flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border transition-all duration-300 hover:scale-105 active:scale-95 disabled:pointer-events-none disabled:opacity-50",
         className
       )}
       {...props}

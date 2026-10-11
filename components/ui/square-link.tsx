@@ -17,11 +17,11 @@ export const SquareLink = ({
 }: SquareLinkProps) => {
   const variantStyles = {
     secondary:
-      "border-secondary text-secondary hover:bg-secondary hover:text-foreground",
+      "border-secondary text-secondary hover:bg-secondary hover:text-primary",
     foreground:
-      "border-foreground text-foreground hover:bg-foreground hover:text-background",
+      "border-foreground text-primary hover:bg-foreground hover:text-secondary",
     primary:
-      "border-primary text-primary hover:bg-primary hover:text-background",
+      "border-primary text-primary hover:bg-primary hover:text-secondary",
   };
 
   return (

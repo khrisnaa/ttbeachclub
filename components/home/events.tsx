@@ -16,7 +16,11 @@ export const Events = () => {
 
   return (
     <section className="flex flex-col gap-8 md:gap-12">
-      <SectionHeader as="h2" subtitle="What's On" title="See What's Happening" />
+      <SectionHeader
+        as="h2"
+        subtitle="What's On"
+        title="See What's Happening"
+      />
 
       <div className="grid grid-cols-1 gap-1 px-1 md:grid-cols-2">
         {events.map((item, index) => {
@@ -87,6 +91,7 @@ export const Events = () => {
                       )}
                       <UnderlineLink
                         href={item.href}
+                        withUnderline
                         onClick={(e) => e.stopPropagation()}
                         className="text-secondary"
                       >
