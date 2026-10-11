@@ -16,7 +16,7 @@ export const Events = () => {
 
   return (
     <section className="flex flex-col gap-8 md:gap-12">
-      <SectionHeader subtitle="What's On" title="See What's Happening" />
+      <SectionHeader as="h2" subtitle="What's On" title="See What's Happening" />
 
       <div className="grid grid-cols-1 gap-1 px-1 md:grid-cols-2">
         {events.map((item, index) => {
@@ -64,7 +64,7 @@ export const Events = () => {
                 <span className="text-sm font-medium uppercase">
                   {item.category}
                 </span>
-                <h4 className="text-3xl font-medium uppercase">{item.title}</h4>
+                <h3 className="text-3xl font-medium uppercase">{item.title}</h3>
 
                 <AnimatePresence>
                   {isOpen && (

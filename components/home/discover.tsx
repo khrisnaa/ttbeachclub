@@ -61,6 +61,7 @@ export const Discover = () => {
         <DividerLine />
 
         <SectionHeader
+          as="h2"
           subtitle="Your Next Escape"
           title="Discover the Experience"
           className="text-secondary"

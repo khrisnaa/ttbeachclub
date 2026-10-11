@@ -158,7 +158,7 @@ export const Places = () => {
 
   return (
     <section className="relative flex flex-col gap-8 overflow-hidden pt-44 md:gap-12">
-      <SectionHeader subtitle="Find Your Place" title="Find Your Own Rhythm" />
+      <SectionHeader as="h2" subtitle="Find Your Place" title="Find Your Own Rhythm" />
 
       <div className="px-1">
         <div
@@ -193,9 +193,9 @@ export const Places = () => {
                 <div className="from-foreground/90 via-foreground/45 to-background/10 absolute inset-0 bg-gradient-to-t" />
 
                 <div className="text-secondary relative z-10 flex w-full flex-col items-start gap-1 text-left">
-                  <h4 className="font-medium uppercase sm:text-lg">
+                  <h3 className="font-medium uppercase sm:text-lg">
                     {place.name}
-                  </h4>
+                  </h3>
 
                   <AnimatePresence>
                     {isOpen && (

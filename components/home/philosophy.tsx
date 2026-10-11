@@ -101,7 +101,6 @@ export const Philosophy = () => {
         ref={containerDiv}
         className="relative -mt-[130vh] h-[220vh] lg:-mt-[120vh]"
       >
-        {/* mobile view */}
         <div className="bg-background absolute bottom-0 left-0 h-[80dvh] w-full p-4 sm:py-6 md:py-16 lg:hidden">
           <div className="relative h-full w-full overflow-hidden sm:mx-auto sm:aspect-3/4 sm:w-auto">
             <motion.div
@@ -120,7 +119,6 @@ export const Philosophy = () => {
           </div>
         </div>
 
-        {/* desktop view */}
         <div className="bg-background absolute bottom-0 left-0 hidden h-screen w-full overflow-hidden lg:flex">
           <motion.div
             style={{ scaleX, scaleY, x: "-50%", y: "-50%" }}
@@ -152,7 +150,7 @@ export const Philosophy = () => {
         <Image
           src="/patterns/pattern-full-new.webp"
           fill
-          alt=""
+          alt="Tropical Temptation Background Pattern"
           className="object-cover object-bottom"
         />
         <div className="from-background absolute inset-0 bg-gradient-to-b via-transparent to-transparent" />

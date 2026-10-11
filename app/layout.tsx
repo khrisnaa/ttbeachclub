@@ -13,7 +13,15 @@ const fahkwang = Fahkwang({
 
 export const metadata: Metadata = {
   title: "Tropical Temptation Beach Club",
-  description: "Tropical Temptation Beach Club",
+  description: "Beach Club - Dining - Rituals at Melasti Beach, Bali",
+  icons: {
+    icon: "/logos/logo-primary.webp",
+  },
+  openGraph: {
+    title: "Tropical Temptation Beach Club",
+    description: "Beach Club - Dining - Rituals at Melasti Beach, Bali",
+    images: ["/hero/bg-hero.webp"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

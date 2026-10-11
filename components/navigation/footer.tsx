@@ -9,10 +9,10 @@ export const Footer = () => {
     >
       <div className="bg-foreground text-secondary relative flex w-full flex-col justify-between gap-10 px-4 pt-10 pb-6 sm:px-8 md:fixed md:bottom-0 md:left-0 md:h-[75vh] md:gap-0 md:px-16 md:pt-12 md:pb-0">
         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-          <h4 className="flex flex-col gap-1 text-4xl leading-none font-light uppercase sm:gap-2 sm:text-5xl md:text-7xl lg:text-8xl xl:text-[6.5rem]">
+          <h2 className="flex flex-col gap-1 text-4xl leading-none font-light uppercase sm:gap-2 sm:text-5xl md:text-7xl lg:text-8xl xl:text-[6.5rem]">
             <span>Tropical</span>
             <span>Temptation</span>
-          </h4>
+          </h2>
 
           <p className="text-secondary/80 max-w-sm text-sm">
             Tropical Temptation is a bohemian sanctuary by the sea. Not a place

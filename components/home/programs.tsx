@@ -15,6 +15,7 @@ export const Programs = () => {
       <div className="flex flex-col gap-12 py-12 md:hidden">
         <div className="px-4">
           <SectionHeader
+            as="h2"
             subtitle="Find Your Place"
             title="Find Your Own Rhythm"
             align="left"
@@ -40,9 +41,9 @@ export const Programs = () => {
               </div>
 
               <div className="flex flex-col gap-1.5 px-4">
-                <h4 className="text-xl font-medium uppercase">
+                <h3 className="text-xl font-medium uppercase">
                   {program.title}
-                </h4>
+                </h3>
                 <p className="text-sm font-medium">{program.description}</p>
               </div>
             </Link>
@@ -54,6 +55,7 @@ export const Programs = () => {
         <div className="flex items-center justify-center px-6 py-16 sm:px-12 md:py-0">
           <div className="flex w-full max-w-lg flex-col gap-32">
             <SectionHeader
+              as="h2"
               subtitle="Find Your Place"
               title="Find Your Own Rhythm"
               align="left"
@@ -79,9 +81,9 @@ export const Programs = () => {
                       isBlurred ? "blur-[2px]" : "blur-0"
                     }`}
                   >
-                    <h4 className="text-xl font-medium uppercase">
+                    <h3 className="text-xl font-medium uppercase">
                       {program.title}
-                    </h4>
+                    </h3>
                     <p className="text-sm font-medium">{program.description}</p>
                   </Link>
                 );

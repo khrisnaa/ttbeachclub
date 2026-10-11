@@ -29,7 +29,7 @@ const StoryText = ({
           <Image
             src="/patterns/pattern-full.webp"
             fill
-            alt=""
+            alt="Tropical Temptation Background Pattern"
             className="object-cover object-center"
           />
           <div className="from-background to-background absolute inset-0 bg-gradient-to-r via-transparent" />
@@ -37,7 +37,7 @@ const StoryText = ({
       )}
 
       <div className="relative z-10 w-full max-w-lg space-y-8">
-        <SectionHeader subtitle={tag} title={title} align="left" />
+        <SectionHeader as="h2" subtitle={tag} title={title} align="left" />
         <p className="text-sm leading-relaxed font-normal sm:text-base">
           {description}
         </p>
@@ -104,12 +104,12 @@ export const Stories = () => {
 
   return (
     <section id="stories" className="bg-background relative">
-      {/* Mobile View: Vertical Flex Col */}
       <div className="flex flex-col gap-16 px-1 py-20 md:hidden">
         {[s1, s2, s3].map((story) => (
           <div key={story.id} className="flex flex-col gap-6">
             <div className="space-y-6 px-5 sm:px-8">
               <SectionHeader
+                as="h2"
                 subtitle={story.tag}
                 title={story.title}
                 align="left"
@@ -126,7 +126,6 @@ export const Stories = () => {
         <MobileParallaxImage src={s4.image} alt={s4.title} />
       </div>
 
-      {/* Desktop View: Horizontal Pinned Scroll */}
       <div ref={targetRef} className="relative hidden h-[400vh] md:block">
         <div className="sticky top-0 flex h-screen w-full items-center overflow-hidden">
           <motion.div style={{ x }} className="relative flex h-full w-[400vw]">
