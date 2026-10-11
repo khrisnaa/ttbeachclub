@@ -9,12 +9,12 @@ export const navLinks: NavLinkItem[] = [
   {
     label: "Rituals",
     href: "#rituals",
-    image_url: "/events/morning-temptation.webp",
+    image_url: "/events/events-2.webp",
   },
   {
     label: "Eat & Drink",
     href: "#eat-drink",
-    image_url: "/places/dining-lounge-v1.webp",
+    image_url: "/events/morning-temptation.webp",
   },
   {
     label: "Public Events",
@@ -29,12 +29,12 @@ export const navLinks: NavLinkItem[] = [
   {
     label: "Svaha Spa Melasti",
     href: "#svaha-spa",
-    image_url: "/places/plantation-v1.webp",
+    image_url: "/programs/program2-v1.webp",
   },
   {
     label: "Exclusive Offers",
     href: "#exclusive-offers",
-    image_url: "/programs/program2-v1.webp",
+    image_url: "/places/west-sand-day-v1.webp",
   },
   {
     label: "What's New",

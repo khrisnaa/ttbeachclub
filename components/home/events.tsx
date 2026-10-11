@@ -44,7 +44,9 @@ export const Events = () => {
                     isOpen ? "hidden" : "group-hover:hidden"
                   }`}
                   sizes={
-                    isFullWidth ? "100vw" : "(max-width: 768px) 100vw, 50vw"
+                    isFullWidth
+                      ? "calc(100vw - 8px)"
+                      : "(max-width: 768px) calc(100vw - 8px), 50vw"
                   }
                 />
 
@@ -56,7 +58,9 @@ export const Events = () => {
                     isOpen ? "block" : "hidden group-hover:block"
                   }`}
                   sizes={
-                    isFullWidth ? "100vw" : "(max-width: 768px) 100vw, 50vw"
+                    isFullWidth
+                      ? "calc(100vw - 8px)"
+                      : "(max-width: 768px) calc(100vw - 8px), 50vw"
                   }
                 />
 

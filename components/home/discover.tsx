@@ -47,6 +47,7 @@ export const Discover = () => {
           <Image
             src="/hero/bg-hero.webp"
             fill
+            sizes="100vw"
             alt="Discover Tropical Temptation"
             className="object-cover object-center"
             priority

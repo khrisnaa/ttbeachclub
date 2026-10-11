@@ -150,6 +150,7 @@ export const Philosophy = () => {
         <Image
           src="/patterns/pattern-full-new.webp"
           fill
+          sizes="(max-width: 1024px) 100vw, 100vw"
           alt="Tropical Temptation Background Pattern"
           className="object-cover object-bottom"
         />

@@ -23,7 +23,7 @@ export const Footer = () => {
 
         <div className="flex flex-col justify-between gap-8 text-xs font-medium sm:flex-row sm:items-start sm:text-sm">
           <div className="space-y-3 sm:space-y-4">
-            <span className="block font-medium">Menu</span>
+            <span className="block font-medium uppercase">Menu</span>
 
             <div className="grid grid-cols-2 justify-items-start gap-x-6 gap-y-2 whitespace-nowrap sm:grid-cols-4 sm:gap-x-12 sm:gap-y-1.5">
               {navLinks.map((link) => (
@@ -39,7 +39,7 @@ export const Footer = () => {
           </div>
 
           <div className="space-y-3 sm:space-y-4">
-            <span className="block font-medium">Address</span>
+            <span className="block font-medium uppercase">Address</span>
 
             <div className="flex flex-col items-start gap-1.5">
               <UnderlineLink
@@ -53,7 +53,7 @@ export const Footer = () => {
           </div>
 
           <div className="space-y-3 sm:space-y-4">
-            <span className="block font-medium">Contact</span>
+            <span className="block font-medium uppercase">Contact</span>
 
             <div className="flex flex-col items-start gap-1.5">
               <UnderlineLink

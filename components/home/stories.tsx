@@ -29,6 +29,7 @@ const StoryText = ({
           <Image
             src="/patterns/pattern-full.webp"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             alt="Tropical Temptation Background Pattern"
             className="object-cover object-center"
           />
@@ -208,7 +209,7 @@ export const Stories = () => {
                 fill
                 alt={s4.title}
                 className="object-cover"
-                sizes="100vw"
+                sizes="(max-width: 768px) 100vw, 100vw"
               />
               <div className="bg-foreground/25 pointer-events-none absolute inset-0" />
             </div>
