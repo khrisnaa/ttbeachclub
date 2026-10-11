@@ -1,4 +1,4 @@
-import { NavLinkItem } from "@/types/navigation";
+import { NavLinkItem, SocialLinkItem } from "@/types/navigation";
 
 export const navLinks: NavLinkItem[] = [
   {
@@ -41,4 +41,11 @@ export const navLinks: NavLinkItem[] = [
     href: "#whats-new",
     image_url: "/stories/main-hero-v1.webp",
   },
+];
+
+export const socialLinks: SocialLinkItem[] = [
+  { label: "Instagram", href: "#instagram" },
+  { label: "Facebook", href: "#facebook" },
+  { label: "TikTok", href: "#tiktok" },
+  { label: "TripAdvisor", href: "#tripadvisor" },
 ];

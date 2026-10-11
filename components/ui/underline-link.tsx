@@ -19,7 +19,7 @@ export const UnderlineLink = ({
     <Link
       {...props}
       className={cn(
-        "relative mt-2 inline-block pb-1 text-sm font-medium uppercase transition-colors duration-300",
+        "relative mt-2 inline-block w-fit pb-1 text-sm font-medium uppercase transition-colors duration-300",
         "before:absolute before:bottom-0 before:left-0 before:h-px before:w-full before:bg-current before:transition-transform before:duration-300 before:ease-out",
         withUnderline
           ? "before:origin-left before:scale-x-100 hover:before:origin-right hover:before:scale-x-0"

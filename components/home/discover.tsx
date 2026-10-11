@@ -39,14 +39,13 @@ export const Discover = () => {
       ref={sectionRef}
       className="relative flex min-h-[85vh] w-full flex-col items-center justify-center overflow-hidden px-4 py-32 text-center select-none md:min-h-screen md:py-48"
     >
-      {/* Background Image Parallax */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.div
           style={{ y }}
           className="relative -top-[20%] h-[140%] w-full"
         >
           <Image
-            src="/stories/main-hero-v1.webp"
+            src="/hero/bg-hero.webp"
             fill
             alt="Discover Tropical Temptation"
             className="object-cover object-center"
@@ -54,12 +53,10 @@ export const Discover = () => {
           />
         </motion.div>
 
-        {/* Overlay bg-foreground & gradient */}
         <div className="bg-foreground/35 pointer-events-none absolute inset-0" />
         <div className="from-foreground/70 via-foreground/30 to-foreground/80 pointer-events-none absolute inset-0 bg-gradient-to-b" />
       </div>
 
-      {/* Foreground Content */}
       <div className="relative z-10 flex flex-col items-center justify-center gap-10 sm:gap-14">
         <DividerLine />
 

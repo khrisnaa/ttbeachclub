@@ -3,3 +3,8 @@ export interface NavLinkItem {
   href: string;
   image_url: string;
 }
+
+export interface SocialLinkItem {
+  label: string;
+  href: string;
+}

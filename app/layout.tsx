@@ -3,6 +3,7 @@ import { Fahkwang } from "next/font/google";
 import LenisProvider from "@/components/lenis-provider";
 import "./globals.css";
 import { Header } from "@/components/navigation/header";
+import { Footer } from "@/components/navigation/footer";
 
 const fahkwang = Fahkwang({
   variable: "--font-fahkwang",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <LenisProvider>
           <Header />
           {children}
+          <Footer />
         </LenisProvider>
       </body>
     </html>
