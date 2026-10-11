@@ -17,7 +17,8 @@ export const Events = () => {
   return (
     <section className="flex flex-col gap-8 md:gap-12">
       <SectionHeader subtitle="What's On" title="See What's Happening" />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-1 px-1">
+
+      <div className="grid grid-cols-1 gap-1 px-1 md:grid-cols-2">
         {events.map((item, index) => {
           const isOpen = activeId === item.id;
           const isFullWidth = index === 2;
@@ -102,5 +103,3 @@ export const Events = () => {
     </section>
   );
 };
-
-export default Events;
