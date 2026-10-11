@@ -10,7 +10,7 @@ export const events: EventItem[] = [
     detail: "",
     href: "https://ttbeach.club/private-events",
     image: "/events/private-events.webp",
-    hoverImage: "/places/vip-cabana-v2.webp",
+    hoverImage: "/events/private-events-2.webp",
   },
   {
     id: "morning-temptation",
@@ -22,7 +22,7 @@ export const events: EventItem[] = [
       "BREAKFAST · COFFEE · SEA · SUN <br/> Daily · 7:00 AM – 10:30 AM <br/> Come early. Stay as long as you like.",
     href: "https://ttbeach.club/menu-breakfast.pdf",
     image: "/events/morning-temptation.webp",
-    hoverImage: "/programs/program2-v1.webp",
+    hoverImage: "/events/morning-temptation-2.webp",
   },
   {
     id: "rituals-gatherings",
