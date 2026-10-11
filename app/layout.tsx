@@ -12,6 +12,7 @@ const fahkwang = Fahkwang({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ttbeachclub.vercel.app"),
   title: "Tropical Temptation Beach Club",
   description: "Beach Club - Dining - Rituals at Melasti Beach, Bali",
   icons: {
