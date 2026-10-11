@@ -16,8 +16,8 @@ export const Programs = () => {
         <div className="px-4">
           <SectionHeader
             as="h2"
-            subtitle="Find Your Place"
-            title="Find Your Own Rhythm"
+            subtitle="Beach Club Life"
+            title="The Rhythm of Tropical Temptation"
             align="left"
           />
         </div>
