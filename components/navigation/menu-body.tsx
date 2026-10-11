@@ -41,7 +41,7 @@ export const MenuBody = ({
 
   return (
     <div className="flex flex-1">
-      <div className="flex flex-wrap items-baseline gap-x-5 gap-y-2 sm:gap-x-6 sm:gap-y-2.5 md:gap-x-8 md:gap-y-3">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-baseline gap-2 sm:gap-x-6 sm:gap-y-2.5 md:gap-x-8 md:gap-y-3 lg:gap-x-6 lg:gap-y-2 xl:gap-x-8 xl:gap-y-3">
         {links.map((link, index) => {
           const isBlurred =
             selectedLink.isActive && selectedLink.index !== index;
@@ -60,7 +60,7 @@ export const MenuBody = ({
                 animate={isBlurred ? "open" : "closed"}
                 className="flex items-baseline overflow-hidden py-0.5"
               >
-                <div className="text-primary flex flex-wrap overflow-hidden text-2xl leading-tight font-medium uppercase sm:text-3xl md:text-[2rem] lg:text-[2.25rem]">
+                <div className="text-primary flex flex-wrap overflow-hidden leading-tight font-medium uppercase text-2xl sm:text-3xl md:text-[2rem] lg:text-[1.625rem] xl:text-[1.875rem] 2xl:text-[2.25rem]">
                   {getChars(link.label)}
                 </div>
               </motion.div>

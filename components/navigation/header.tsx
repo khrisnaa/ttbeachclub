@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { Menu } from "./menu";
@@ -13,12 +13,13 @@ import {
   backgroundVariants,
 } from "./anim";
 import { navLinks } from "@/datas/navigation";
-import type { NavLinkItem } from "@/types/navigation";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isColorActive, setIsColorActive] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHiddenInStories, setIsHiddenInStories] = useState(false);
+  const lastScrollY = useRef(0);
   const lenis = useLenis();
 
   useEffect(() => {
@@ -38,8 +39,30 @@ export const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      const currentScroll = window.scrollY;
       const heroThreshold = window.innerHeight - 80;
-      setIsScrolled(window.scrollY >= heroThreshold);
+      setIsScrolled(currentScroll >= heroThreshold);
+
+      const storiesEl = document.getElementById("stories");
+      if (storiesEl) {
+        const rect = storiesEl.getBoundingClientRect();
+        const isInStories = rect.top <= 0 && rect.bottom >= 80;
+
+        if (isInStories) {
+          if (
+            currentScroll > lastScrollY.current &&
+            currentScroll - lastScrollY.current > 5
+          ) {
+            setIsHiddenInStories(true);
+          } else if (currentScroll < lastScrollY.current) {
+            setIsHiddenInStories(false);
+          }
+        } else {
+          setIsHiddenInStories(false);
+        }
+      }
+
+      lastScrollY.current = currentScroll;
     };
 
     handleScroll();
@@ -65,10 +88,15 @@ export const Header = () => {
   };
 
   const isLight = isColorActive || isScrolled;
+  const isHidden = isHiddenInStories && !isOpen;
 
   return (
     <>
-      <header className="fixed top-0 left-0 z-50 w-full">
+      <header
+        className={`fixed top-0 left-0 z-50 w-full transition-transform duration-500 ease-in-out ${
+          isHidden ? "pointer-events-none -translate-y-full" : "translate-y-0"
+        }`}
+      >
         <div
           className={`relative flex w-full items-center justify-between px-4 transition-all duration-300 md:px-16 ${
             isScrolled ? "h-16 shadow-xs" : "h-25"
@@ -83,7 +111,7 @@ export const Header = () => {
                 handleToggle();
               }
             }}
-            className="group flex cursor-pointer items-center justify-center gap-2.5 px-3 py-1 select-none"
+            className="group flex cursor-pointer items-center justify-center gap-2.5 py-1 select-none md:px-3"
           >
             <div className="pointer-events-none relative flex h-3.5 w-5 flex-col items-center justify-center">
               <motion.span
@@ -102,7 +130,7 @@ export const Header = () => {
               />
             </div>
 
-            <div className="relative flex items-center">
+            <div className="relative hidden items-center sm:flex">
               <motion.p
                 variants={opacityVariants}
                 animate={!isOpen ? "open" : "closed"}
@@ -136,7 +164,7 @@ export const Header = () => {
                 width={180}
                 height={70}
                 className={`w-auto object-contain transition-all duration-300 ${
-                  isScrolled ? "h-11" : "h-16"
+                  isScrolled ? "h-8 md:h-11" : "h-10 md:h-16"
                 }`}
                 priority
               />
