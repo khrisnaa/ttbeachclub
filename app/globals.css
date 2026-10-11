@@ -4,21 +4,16 @@
 :root {
   --background: #f7edd7;
   --foreground: #392315;
-  --primary: #392315;
-  --primary-foreground: #f7edd7;
-  --primary-bg: #f7edd7;
-  --primary-text: #392315;
+  --primary: var(--foreground);
+  --secondary: var(--background);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary-bg: #f7edd7;
-  --color-primary-text: #392315;
+  --color-secondary: var(--secondary);
   --font-sans: var(--font-fahkwang), sans-serif;
-  --font-fahkwang: var(--font-fahkwang), sans-serif;
 }
 
 body {

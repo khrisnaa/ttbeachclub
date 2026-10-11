@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fahkwang } from "next/font/google";
 import LenisProvider from "@/components/lenis-provider";
 import "./globals.css";
+import { Header } from "@/components/navigation/header";
 
 const fahkwang = Fahkwang({
   variable: "--font-fahkwang",
@@ -21,7 +22,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${fahkwang.variable} h-full font-sans antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
-        <LenisProvider>{children}</LenisProvider>
+        <LenisProvider>
+          <Header />
+          {children}
+        </LenisProvider>
       </body>
     </html>
   );
