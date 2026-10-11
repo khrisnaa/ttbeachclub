@@ -2,8 +2,7 @@ import Link from "next/link";
 import { type ComponentPropsWithoutRef, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-export interface SquareLinkProps
-  extends ComponentPropsWithoutRef<typeof Link> {
+export interface SquareLinkProps extends ComponentPropsWithoutRef<typeof Link> {
   children?: ReactNode;
   className?: string;
   variant?: "secondary" | "foreground" | "primary";
@@ -39,5 +38,3 @@ export const SquareLink = ({
     </Link>
   );
 };
-
-export default SquareLink;

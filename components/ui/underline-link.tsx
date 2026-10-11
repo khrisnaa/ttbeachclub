@@ -2,8 +2,9 @@ import Link from "next/link";
 import { type ComponentPropsWithoutRef, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-export interface UnderlineLinkProps
-  extends ComponentPropsWithoutRef<typeof Link> {
+export interface UnderlineLinkProps extends ComponentPropsWithoutRef<
+  typeof Link
+> {
   children?: ReactNode;
   className?: string;
 }
@@ -26,5 +27,3 @@ export const UnderlineLink = ({
     </Link>
   );
 };
-
-export default UnderlineLink;
