@@ -179,7 +179,7 @@ export const Places = () => {
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerUp}
-          className="flex cursor-grab touch-pan-y [scrollbar-width:none] gap-1 overflow-x-auto select-none active:cursor-grabbing [&::-webkit-scrollbar]:hidden snap-x snap-mandatory md:snap-none"
+          className="flex cursor-grab [scrollbar-width:none] gap-1 overflow-x-auto select-none active:cursor-grabbing [&::-webkit-scrollbar]:hidden snap-x snap-mandatory md:snap-none"
         >
           {duplicatedPlaces.map((place, index) => {
             const uniqueKey = `${place.id}-${index}`;
